@@ -67,7 +67,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_DATA_RECOVERY_FOR_SETTINGS="1" 
 
 	# Magisk & Boot Patching
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v30.6.zip
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v30.7.zip
 	export OF_USE_MAGISKBOOT="1"
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES="1"
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE="1"
