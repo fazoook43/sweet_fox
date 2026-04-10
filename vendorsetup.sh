@@ -64,7 +64,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# Decryption Support
 	export OF_FBE_METADATA_MOUNT_IGNORE="1"
 	export OF_IGNORE_LOGICAL_MOUNT_ERRORS="1"
-	export FOX_USE_DATA_RECOVERY_FOR_SETTINGS="1" 
+	export FOX_SETTINGS_ROOT_DIRECTORY=/data/recovery
+	export FOX_MISCELLANEOUS_ROOT_DIRECTORY=/sdcard
 
 	# Magisk & Boot Patching
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v30.7.zip
