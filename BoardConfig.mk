@@ -111,6 +111,10 @@ TW_NO_BIND_SYSTEM := true # Prevents mount issues on modern Android
 BOARD_EROFS_COMPRESSOR := lz4hc
 BOARD_EROFS_PCLUSTER_SIZE := 4096
 
+# UI & Tools
+TW_THEME := portrait_hdpi
+TW_USE_TOOLBOX := true
+
 #Neom_mostafameesr
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_REPACKTOOLS := true
@@ -126,6 +130,7 @@ TW_NO_SCREEN_TIMEOUT := true
 # Crypto & Decryption
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
+TW_USE_FSCRYPT_POLICY := 2
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_METADATA_PARTITION := true
