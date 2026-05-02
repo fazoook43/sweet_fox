@@ -63,8 +63,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
       export FOX_MISCELLANEOUS_ROOT_DIRECTORY=/sdcard
 
       # Maintainer & Build Info
-      export FOX_BUILD_TYPE="Beta"
-      export FOX_MAINTAINER_PATCH_VERSION="1"
+      export FOX_BUILD_TYPE="Stable"
+      export FOX_MAINTAINER_PATCH_VERSION="2"
       export OF_MAINTAINER="Mostafameesr"
 
 else
