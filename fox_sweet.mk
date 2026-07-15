@@ -49,6 +49,9 @@ OF_ENABLE_FRP_ADDON := 1
 # f2fs compression
 OF_ENABLE_FS_COMPRESSION := 1
 
+# wlan
+OF_ENABLE_WLAN := 1
+
 # don't keep log history - only use for Stable releases
 ifeq ($(FOX_BUILD_TYPE),Stable)
    OF_DONT_KEEP_LOG_HISTORY := 1
