@@ -20,14 +20,6 @@
       "Controller": "cpuset",
       "File": "top-app/cpus"
     },
-    // Xiaomi task_profiles.json for QCOM platform
-    // MIUI ADD: Performance_MemoryEnhance
-    {
-      "Name": "AudioAppCapacityCPUs",
-      "Controller": "cpuset",
-      "File": "audio-app/cpus"
-    },
-    // END Performance_MemoryEnhance
     {
       "Name": "MemStats",
       "Controller": "memory",
@@ -202,21 +194,6 @@
         }
       ]
     },
-// MIUI ADD: Performance_SpeedUI
-    {
-      "Name": "MISFPerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "misf"
-          }
-        }
-      ]
-    },
-// END Performance_SpeedUI
     {
       "Name": "RealtimePerformance",
       "Actions": [
@@ -256,21 +233,6 @@
         }
       ]
     },
-    // MIUI ADD: Performance_MemoryEnhance
-    {
-      "Name": "AudioAppPerformance",
-      "Actions" : [
-        {
-          "Name" : "JoinCgroup",
-          "Params" :
-          {
-            "Controller": "schedtune",
-            "Path": "audio-app"
-          }
-        }
-      ]
-    },
-    // END Performance_MemoryEnhance
     {
       "Name": "NNApiHALPerformance",
       "Actions": [
@@ -297,47 +259,6 @@
         }
       ]
     },
-// MIUI ADD: Performance_PerformanceEnhance
-    {
-      "Name": "DisplayPerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "display"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "AudioPerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "audio"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "TouchPerformance",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "touch"
-          }
-        }
-      ]
-    },
-// END Performance_PerformanceEnhance
     {
       "Name": "CpuPolicySpread",
       "Actions": [
@@ -522,21 +443,7 @@
         }
       ]
     },
-// MIUI ADD: Performance_SpeedUI
-    {
-      "Name": "ProcessCapacityMISF",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpuset",
-            "Path": "misf"
-          }
-        }
-      ]
-    },
-// END Performance_SpeedUI
+
     {
       "Name": "ServiceCapacityLow",
       "Actions": [
@@ -577,48 +484,6 @@
         }
       ]
     },
-    // MIUI ADD: Performance_MemoryEnhance
-    {
-      "Name": "AudioAppCapacity",
-      "Actions" : [
-        {
-          "Name" : "JoinCgroup",
-          "Params" :
-          {
-            "Controller": "cpuset",
-            "Path": "audio-app"
-          }
-        }
-      ]
-    },
-
-    {
-      "Name": "BlkIOForeground",
-      "Actions" : [
-        {
-          "Name" : "JoinCgroup",
-          "Params" :
-          {
-            "Controller": "blkio",
-            "Path": ""
-          }
-        }
-      ]
-    },
-    {
-      "Name": "BlkIOBackground",
-      "Actions" : [
-        {
-          "Name" : "JoinCgroup",
-          "Params" :
-          {
-            "Controller": "blkio",
-            "Path": "bg"
-          }
-        }
-      ]
-    },
-    // END Performance_MemoryEnhance
     {
       "Name": "LowIoPriority",
       "Actions": [
@@ -780,34 +645,42 @@
         }
       ]
     },
-    // MIUI ADD: Performance_MemoryEnhance
     {
-      "Name": "MemoryProtectedProcess",
+      "Name": "CompactFull",
       "Actions": [
         {
-          "Name": "JoinCgroup",
+          "Name": "Compact",
           "Params":
           {
-            "Controller": "memory",
-            "Path": "protected-app"
+            "Type": "full"
           }
         }
       ]
     },
     {
-      "Name": "MemoryFreezeProcess",
+      "Name": "CompactAnon",
       "Actions": [
         {
-          "Name": "JoinCgroup",
+          "Name": "Compact",
           "Params":
           {
-            "Controller": "memory",
-            "Path": "freeze-app"
+            "Type": "anon"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "CompactFile",
+      "Actions": [
+        {
+          "Name": "Compact",
+          "Params":
+          {
+            "Type": "file"
           }
         }
       ]
     }
-    // END Performance_MemoryEnhance
   ],
 
   "AggregateProfiles": [
@@ -823,20 +696,6 @@
       "Name": "SCHED_SP_FOREGROUND",
       "Profiles": [ "HighPerformance", "HighIoPriority", "TimerSlackNormal" ]
     },
-// MIUI ADD: Performance_PerformanceEnhance
-    {
-      "Name": "SCHED_SP_DISPLAY",
-      "Profiles": [ "DisplayPerformance", "HighIoPriority", "TimerSlackNormal" ]
-    },
-    {
-      "Name": "SCHED_SP_AUDIO",
-      "Profiles": [ "AudioPerformance", "HighIoPriority", "TimerSlackNormal" ]
-    },
-    {
-      "Name": "SCHED_SP_TOUCH",
-      "Profiles": [ "TouchPerformance", "HighIoPriority", "TimerSlackNormal" ]
-    },
-// END Performance_PerformanceEnhance
     {
       "Name": "SCHED_SP_FOREGROUND_WINDOW",
       "Profiles": [ "HighPerformanceWI", "HighIoPriority", "TimerSlackNormal" ]
@@ -897,11 +756,9 @@
       "Name": "OtaProfiles",
       "Profiles": [ "ServiceCapacityLow", "LowIoPriority", "HighEnergySaving" ]
     },
-//MIUI ADD: Performance_BoostFramework
     {
       "Name": "InputPolicy",
-      "Profiles": [ "MaxPerformance", "ProcessCapacityMax", "TimerSlackNormal" ]
+      "Profiles": [ "RealTimeInputScheduling", "MaxPerformance", "ProcessCapacityMax", "TimerSlackNormal" ]
     }
-//END Performance_BoostFramework
   ]
 }
