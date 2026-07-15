@@ -64,7 +64,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
       # Maintainer & Build Info
       export FOX_BUILD_TYPE="Beta"
-      export FOX_MAINTAINER_PATCH_VERSION="4"
+      export FOX_MAINTAINER_PATCH_VERSION="5"
       export OF_MAINTAINER="Mostafameesr"
 
 else
