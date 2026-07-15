@@ -141,3 +141,6 @@ BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_METADATA_PARTITION := true
 
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+
+# override whatever is stupidly causing "AB_OTA_UPDATER := true"
+AB_OTA_UPDATER := false
