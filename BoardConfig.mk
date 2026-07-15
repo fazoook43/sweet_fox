@@ -107,6 +107,11 @@ TW_INCLUDE_PYTHON := true
 TW_INCLUDE_LOGICAL := true # Helps with Dynamic Partitions UI
 TW_NO_BIND_SYSTEM := true # Prevents mount issues on modern Android
 
+# Vibrator
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
+TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/default"
+
 # EROFS Support
 BOARD_EROFS_COMPRESSOR := lz4hc
 BOARD_EROFS_PCLUSTER_SIZE := 4096
